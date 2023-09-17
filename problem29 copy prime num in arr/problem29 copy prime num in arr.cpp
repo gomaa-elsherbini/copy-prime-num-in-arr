@@ -39,20 +39,20 @@ void readArray(int arr[100], int &length)
 	}
 }
 
-int countPrimeNumbersOfArr(int arr1[100], int length)
-{
-	int counter = 0;
-	for (int i = 0; i < length; i++)
-	{
-		if (getPrimeNumber(arr1[i]) == enPrime::Prime)
-		{
-			counter++;
-		}
-	}
-	return counter;
-}
+//int countPrimeNumbersOfArr(int arr1[100], int length)
+//{
+//	int counter = 0;
+//	for (int i = 0; i < length; i++)
+//	{
+//		if (getPrimeNumber(arr1[i]) == enPrime::Prime)
+//		{
+//			counter++;
+//		}
+//	}
+//	return counter;
+//}
 
-void copyPrimeNumbersOfArr(int arr[100], int primeArr[100], int length)
+void copyPrimeNumbersOfArr(int arr[100], int primeArr[100], int length,int &arr2Length)
 {
 	int counter = 0;
 	for (int i = 0; i < length; i++)
@@ -63,6 +63,7 @@ void copyPrimeNumbersOfArr(int arr[100], int primeArr[100], int length)
 			counter++;
 		}
 	}
+	arr2Length = counter;
 }
 
 void printArray(int arr[100], int length)
@@ -78,18 +79,37 @@ int main()
 {
 	srand((unsigned)time(NULL));
 
-	int arr[100]; int arr2[100]; int length;
+	//int arr[100]; int arr2[100]; int length; int arr2Length;
+	//
+	//readArray(arr, length);
+	//copyPrimeNumbersOfArr(arr, arr2, length, arr2Length);
+	////int arr2Length = countPrimeNumbersOfArr(arr, length);
+	//
+	//
+	//cout << "Array 1 Elements : ";
+	//printArray(arr, length);
+	//cout << "Prime Numbers in Array2: \n";
+	//printArray(arr2, arr2Length);
 
-	readArray(arr, length);
-	copyPrimeNumbersOfArr(arr, arr2, length);
-	int arr2Length = countPrimeNumbersOfArr(arr, length);
+	cout << getPrimeNumber(97)<<"\n";
+	cout << getPrimeNumber(93)<<"\n";
+	cout << getPrimeNumber(19)<<"\n";
+	cout << getPrimeNumber(25)<<"\n";
+	cout << getPrimeNumber(73)<<"\n";
 
-	
-	cout << "Array 1 Elements : ";
-	printArray(arr, length);
-	cout << "Prime Numbers in Array2: \n";
-	printArray(arr2, arr2Length);
-	//copyPrimeNumbersOfArr(arr,arr2, length);
-
-	return main();
+	return 0;
 }	
+
+/*Array 1 Elements : 17 84 42 19 26
+Prime Numbers in Array2:
+17
+
+Array 1 Elements : 61 13 43 1 50
+Prime Numbers in Array2:
+61 13 43
+
+Array 1 Elements : 97 93 19 25 73
+Prime Numbers in Array2:
+97 19 73
+
+*/

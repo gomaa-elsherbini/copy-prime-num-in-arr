@@ -60,7 +60,6 @@ void copyPrimeNumbersOfArr(int arr[100], int primeArr[100], int length)
 		if (getPrimeNumber(arr[i]) == enPrime::Prime)
 		{
 			primeArr[counter] = arr[i];
-			//cout << primeArr[counter] << endl;
 			counter++;
 		}
 	}
